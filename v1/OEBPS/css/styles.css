@@ -1,0 +1,84 @@
+html,body,div,img,p,a,ul,li { margin:0;padding:0; } /* this is not an exhaustive browser reset */
+
+/*
+BODY DECLARATION
+*/
+body {
+    width: 1200px;    /* 1 */
+    height: 1700px; /* 1 */
+    position: relative;
+    font-size: 48px;
+    line-height: 1.5;
+}
+/*
+FONT DECLARATION
+
+I've settled for Fira as my font (see http://www.fontsquirrel.com/fonts/fira-sans for information)
+
+and a set of 4 different weights:
+
+Thin
+Thin Italics
+Semi bold
+Semi bold italics
+*/
+
+@font-face {
+  font-family: 'Fira Thin';
+  src: url('type/FiraSans-Thin.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Fira Thin Italic';
+  src: url('type/FiraSans-ThinItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Fira SemiBold';
+  src: url('type/FiraSans-SemiBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Fira SemiBold Italic';
+  src: url('type/FiraSans-SemiBoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*
+GENERAL FONT-RELATED SELECTORS
+
+2. em translates to italics
+3. strong translates to bold font
+4. define the two ways to call bold+italics (make sure the order doesn't matter)
+5. Set all headers to be bold
+*/
+
+em { /* 2 */
+    font-family: 'Fira Thin Italic';
+}
+
+strong { /* 3 */
+    font-family: 'Fira SemiBold';
+}
+
+em strong,
+strong em { /* 4 */
+    font-family:  'Fira SemiBold Italic';
+}
+
+h1, h2, h3, h4, h5 { /* 5 */
+  font-family: 'Fira SemiBold';
+}
+
+.content {
+  padding-left: 2em;
+}
+
+video {}
